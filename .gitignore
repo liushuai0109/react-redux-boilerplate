@@ -5,3 +5,12 @@ lib
 coverage
 dist
 .idea
+
+# 忽略非脚手架工具文件
+*/
+src/*
+!src
+!src/.gitkeep
+compiler/build/*
+!compiler/build/.gitkeep
+!compiler
