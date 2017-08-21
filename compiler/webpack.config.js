@@ -15,7 +15,8 @@ const defaultConfig = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env']
+                        presets: ['react', 'es2015', 'stage-0', 'env'],
+                        plugins: ['transform-class-properties']
                     }
                 }
             },
@@ -88,7 +89,6 @@ module.exports = function (env, argv) {
         new HtmlWebpackPlugin(htmlWebpackPluginConfig),
     ], projectWebpackConfig =  projectConfig[env || 'dev'] || projectConfig;
 
-console.log(projectWebpackConfig);
     switch (env) {
         case 'prod':
             plugins = plugins.concat([
